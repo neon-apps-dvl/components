@@ -1,6 +1,6 @@
 package neon.pixel.components.backdrop;
 
-import static com.pixel.components.Components.getPx;
+import static neon.pixel.components.Components.getPx;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -18,7 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
-import com.pixel.components.R;
+import neon.pixel.components.R;
 
 public class Backdrop extends CoordinatorLayout {
     private static final String TAG = "Backdrop";

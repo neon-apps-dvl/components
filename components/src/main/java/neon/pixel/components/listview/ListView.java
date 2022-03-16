@@ -14,8 +14,8 @@ import java.util.List;
 public class ListView extends RecyclerView {
     List <Item> items;
 
-    com.pixel.components.listview.Adapter adapter;
-    com.pixel.components.listview.LayoutManager layoutManager;
+    neon.pixel.components.listview.Adapter adapter;
+    neon.pixel.components.listview.LayoutManager layoutManager;
 
     public ListView (@NonNull Context context, @Nullable AttributeSet attrs) {
         super (context, attrs);
@@ -24,8 +24,8 @@ public class ListView extends RecyclerView {
 
         items = new ArrayList <> ();
 
-        adapter = new com.pixel.components.listview.Adapter (items);
-        layoutManager = new com.pixel.components.listview.LayoutManager (context);
+        adapter = new neon.pixel.components.listview.Adapter (items);
+        layoutManager = new neon.pixel.components.listview.LayoutManager (context);
 
         adapter.notifyDataSetChanged ();
         layoutManager.setScrollable (true);

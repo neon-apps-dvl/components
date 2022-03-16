@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.pixel.components.R;
+import neon.pixel.components.R;
 
 import java.util.ArrayList;
 import java.util.List;

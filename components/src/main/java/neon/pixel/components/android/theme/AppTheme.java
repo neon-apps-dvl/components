@@ -1,12 +1,12 @@
 package neon.pixel.components.android.theme;
 
-import static com.pixel.components.android.color.Color.TONE_CONTAINER_LIGHT;
-import static com.pixel.components.android.color.Color.TONE_LIGHT;
-import static com.pixel.components.android.color.Color.TONE_ON_CONTAINER_LIGHT;
-import static com.pixel.components.android.color.Color.TONE_ON_LIGHT;
+import static neon.pixel.components.android.color.Color.TONE_CONTAINER_LIGHT;
+import static neon.pixel.components.android.color.Color.TONE_LIGHT;
+import static neon.pixel.components.android.color.Color.TONE_ON_CONTAINER_LIGHT;
+import static neon.pixel.components.android.color.Color.TONE_ON_LIGHT;
 
-import com.pixel.components.android.color.AppColorProfile;
-import com.pixel.components.color.Hct;
+import neon.pixel.components.android.color.AppColorProfile;
+import neon.pixel.components.color.Hct;
 
 public class AppTheme extends Theme{
     private static final Class mProfile = AppColorProfile.class;

@@ -13,7 +13,7 @@ import androidx.annotation.FloatRange;
 import androidx.annotation.Nullable;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
-import com.pixel.components.R;
+import neon.pixel.components.R;
 
 public class SeekBar extends CoordinatorLayout {
     private View background;
@@ -73,10 +73,10 @@ public class SeekBar extends CoordinatorLayout {
 
         TypedValue tempHolder = new TypedValue ();
 
-        context.getTheme ().resolveAttribute (R.attr.colorPrimaryContainer, tempHolder, true);
+        context.getTheme ().resolveAttribute (com.google.android.material.R.attr.colorPrimaryContainer, tempHolder, true);
         defaultBackgroundColor = tempHolder.data;
 
-        context.getTheme ().resolveAttribute (R.attr.colorPrimary, tempHolder, true);
+        context.getTheme ().resolveAttribute (com.google.android.material.R.attr.colorPrimary, tempHolder, true);
         defaultColor = tempHolder.data;
 
         backgroundColor = attrs.getColor (R.styleable.SeekBarAttrs_backgroundColor, defaultBackgroundColor);

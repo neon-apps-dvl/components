@@ -13,8 +13,8 @@ import androidx.annotation.FloatRange;
 import androidx.annotation.Nullable;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
-import com.pixel.components.Components;
-import com.pixel.components.R;
+import neon.pixel.components.Components;
+import neon.pixel.components.R;
 
 public class ProgressBar extends CoordinatorLayout {
     ProgressBar containerLayout;
@@ -72,10 +72,10 @@ public class ProgressBar extends CoordinatorLayout {
 
         TypedValue tempHolder = new TypedValue ();
 
-        context.getTheme ().resolveAttribute (R.attr.colorPrimaryContainer, tempHolder,  true);
+        context.getTheme ().resolveAttribute (com.google.android.material.R.attr.colorPrimaryContainer, tempHolder,  true);
         backgroundColor = tempHolder.data;
 
-        context.getTheme ().resolveAttribute (R.attr.colorPrimary, tempHolder,  true);
+        context.getTheme ().resolveAttribute (com.google.android.material.R.attr.colorPrimary, tempHolder,  true);
         color = tempHolder.data;
 
         background.setBackgroundColor (backgroundColor);
