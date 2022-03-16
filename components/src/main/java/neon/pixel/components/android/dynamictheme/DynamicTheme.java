@@ -1,7 +1,10 @@
 package neon.pixel.components.android.dynamictheme;
 
+import android.util.Log;
+
 import neon.pixel.components.android.theme.Theme;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +15,7 @@ import java.util.concurrent.Executors;
  * Class for dynamic application-wide themes
  */
 public class DynamicTheme {
+    private static final String TAG = DynamicTheme.class.getName ();
     private static Map <Integer, Theme> sThemes;
     private static Map <Integer, List <OnThemeChangedListener>> sListeners;
 
@@ -27,7 +31,7 @@ public class DynamicTheme {
             sListeners = new HashMap <> ();
         }
 
-        Theme theme = Theme.from (themeProvider);
+        Theme theme = new Theme (themeProvider);
 
         sThemes.put (id, theme);
 
@@ -53,8 +57,14 @@ public class DynamicTheme {
      * @param id The id of the {@link Theme}
      * @param l The {@link OnThemeChangedListener}
      */
-    private static void addOnThemeChangedListener (int id, OnThemeChangedListener l) {
-        List <OnThemeChangedListener> listeners = sListeners.get (id);
+    public static void addOnThemeChangedListener (int id, OnThemeChangedListener l) {
+        List <OnThemeChangedListener> listeners;
+
+        if ((listeners = sListeners.get (id)) == null) {
+            Log.d (TAG, "theme " + id + " has no registered listeners, adding listener");
+
+            listeners = new ArrayList <> ();
+        }
 
         listeners.add (l);
         sListeners.put (id, listeners);
@@ -69,9 +79,11 @@ public class DynamicTheme {
 
         List <OnThemeChangedListener> listeners = sListeners.get (id);
 
-        for (OnThemeChangedListener listener : listeners) {
-            Executor e = Executors.newSingleThreadExecutor ();
-            e.execute (() -> listener.onThemeChanged (id, theme));
+        if (listeners != null) {
+            for (OnThemeChangedListener listener : listeners) {
+                Executor e = Executors.newSingleThreadExecutor ();
+                e.execute (() -> listener.onThemeChanged (id, theme));
+            }
         }
     }
 
@@ -86,9 +98,11 @@ public class DynamicTheme {
 
         List <OnThemeChangedListener> listeners = sListeners.get (id);
 
-        for (OnThemeChangedListener listener : listeners) {
-            Executor e = Executors.newSingleThreadExecutor ();
-            e.execute (() -> listener.onThemeChanged (id, theme));
+        if (listeners != null) {
+            for (OnThemeChangedListener listener : listeners) {
+                Executor e = Executors.newSingleThreadExecutor ();
+                e.execute (() -> listener.onThemeChanged (id, theme));
+            }
         }
     }
 
