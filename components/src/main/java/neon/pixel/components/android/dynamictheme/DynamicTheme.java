@@ -64,7 +64,7 @@ public class DynamicTheme {
      * Notify the {@link DynamicTheme} provider of a change to a {@link Theme}
      * @param id The id of the {@link Theme}
      */
-    public void notifyThemeChanged (int id) {
+    public static void notifyThemeChanged (int id) {
         Theme theme = getTheme (id);
 
         List <OnThemeChangedListener> listeners = sListeners.get (id);
@@ -79,7 +79,7 @@ public class DynamicTheme {
      * Notify the {@link DynamicTheme} provider of a change to a {@link Theme}
      * @param theme The {@link Theme}
      */
-    public void notifyThemeChanged (Theme theme) {
+    public static void notifyThemeChanged (Theme theme) {
         Integer id = getId (theme);
 
         if (id == null) throw new NullPointerException ();
