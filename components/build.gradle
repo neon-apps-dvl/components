@@ -40,10 +40,13 @@ publishing {
             def props = new Properties()
             props.load(new FileInputStream(propsFile))
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/neon-pixel-dvl/components")
+            url = uri("https://maven.pkg.github.com/neon-apps-dvl/components")
             credentials {
                 username props['username']
                 password props['token']
+
+                println 'username: ' + props ['username']
+                println 'token: ' + props ['token']
             }
         }
     }
