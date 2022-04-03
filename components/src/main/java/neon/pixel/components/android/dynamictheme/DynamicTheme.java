@@ -55,19 +55,35 @@ public class DynamicTheme {
      * Attach an {@link OnThemeChangedListener} to the {@link DynamicTheme} provider
      * to listen for changes to a {@link Theme}
      * @param id The id of the {@link Theme}
-     * @param l The {@link OnThemeChangedListener}
+     * @param l The {@link OnThemeChangedListener} to add
      */
     public static void addOnThemeChangedListener (int id, OnThemeChangedListener l) {
         List <OnThemeChangedListener> listeners;
 
         if ((listeners = sListeners.get (id)) == null) {
-            Log.d (TAG, "theme " + id + " has no registered listeners, adding listener");
-
             listeners = new ArrayList <> ();
         }
 
         listeners.add (l);
         sListeners.put (id, listeners);
+
+        l.onThemeChangedListenerAdded (id);
+    }
+
+    /**
+     * Detach the {@link OnThemeChangedListener} from the {@link DynamicTheme} provider
+     * listening for changes to a {@link Theme}
+     * @param id The id of the {@link Theme}
+     * @param l The {@link OnThemeChangedListener} to remove
+     */
+    public static void removeOnThemeChangedListener (int id, OnThemeChangedListener l) {
+        List <OnThemeChangedListener> listeners;
+
+        if ((listeners = sListeners.get (id)) != null) {
+            listeners.remove (l);
+        }
+
+        l.onThemeChangedListenerRemoved (id);
     }
 
     /**
