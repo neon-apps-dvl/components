@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/round_rect_12.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/round_rect_128dp.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/round_rect_24dp.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/round_rect_256dp.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/round_rect_48dp.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/round_rect_64dp.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/layout_media_controls.xml" value="0.13697916666666668" />
         <entry key="app/src/main/res/menu/menu_main.xml" value="0.28229166666666666" />
         <entry key="components/src/main/res/drawable/l.xml" value="0.1" />
         <entry key="components/src/main/res/drawable/progress_bar_background.xml" value="0.1" />
