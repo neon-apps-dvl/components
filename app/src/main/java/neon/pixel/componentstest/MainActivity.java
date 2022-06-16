@@ -1,12 +1,20 @@
 package neon.pixel.componentstest;
 
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import neon.pixel.components.color.Argb;
+import neon.pixel.components.listview.ListView;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -77,5 +85,28 @@ public class MainActivity extends AppCompatActivity {
         Log.e (TAG, "argb r: " + argb.red ());
         Log.e (TAG, "argb g: " + argb.green ());
         Log.e (TAG, "argb b: " + argb.blue ());
+
+        ListView listView = findViewById (R.id.list_view);
+
+        View v1 = new View (this);
+        v1.setLayoutParams (new ViewGroup.LayoutParams (-1, 200));
+        v1.setBackgroundColor (Color.RED);
+
+        View v2 = new View (this);
+        v2.setLayoutParams (new ViewGroup.LayoutParams (-1, 200));
+        v2.setBackgroundColor (Color.GREEN);
+
+        View v3 = new View (this);
+        v3.setLayoutParams (new ViewGroup.LayoutParams (-1, 200));
+        v3.setBackgroundColor (Color.MAGENTA);
+
+        View v4 = new View (this);
+        v4.setLayoutParams (new ViewGroup.LayoutParams (-1, 200));
+        v4.setBackgroundColor (Color.RED);
+
+        List <View> list = new ArrayList <> ();
+        list.addAll (Arrays.asList (v1, v2, v3, v4));
+
+        listView.addItems (list);
     }
 }
